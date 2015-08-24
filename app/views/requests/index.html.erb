@@ -1,0 +1,31 @@
+<h1>Manage Requests</h1>
+<table border="2px">
+<thead>
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Department</th>
+    <th>Message</th>
+    <th>Actions</th>
+  </tr>
+</thead>
+<tbody>
+  <% @requests.each do |r| %>
+    <tr>
+        <td> <%= "#{r.name}" %> </td>
+        <td> <a href="mailto:<%= r.email %>"><%= r.email %></td>
+        <td> <%= "#{r.department}" %> </td>
+        <td> <%= "#{r.message}" %> </td>
+        <td>
+          <%= link_to "Edit", edit_request_path(r), class: "btn btn-info" %>
+          <%= link_to "Delete", request_path(r), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-danger"%>
+          <% if r.done == 1 %>
+            <%= link_to "Done", request_path(r), method: :update, class: "btn btn-info"%>
+          <% elsif %>
+            <%= link_to "Not Done", request_path(r), method: :update, class: "btn btn-warning"%>
+          <% end %>
+        </td>
+    </tr>
+  <% end %>
+</tbody>
+</table>
