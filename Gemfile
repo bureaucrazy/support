@@ -39,6 +39,7 @@ group :development, :test do
   gem "faker"
   gem "cowsay"
   gem "bootstrap-sass"
+  gem "kaminari"
 
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'

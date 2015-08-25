@@ -1,3 +1,5 @@
+<div class="background"></div>
+<hr>
 <% if @request.errors.any? %>
   <ul>
     <% @request.errors.full_messages.each do |msg| %>
@@ -13,11 +15,11 @@
   </div>
   <div class="form-group">
     <%= r.label :email %>
-    <%= r.text_area :email, class: "form-control" %>
+    <%= r.text_field :email, class: "form-control" %>
   </div>
   <div class="form-group">
     <%= r.label :department %>
-    <%= r.text_area :department, class: "form-control" %>
+    <%= r.text_field :department, class: "form-control" %>
   </div>
   <div class="form-group">
     <%= r.label :message %>
